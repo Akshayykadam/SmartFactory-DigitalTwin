@@ -69,6 +69,11 @@ namespace SmartFactory.DigitalTwin.Editor
                 Undo.AddComponent<PhysicsRaycaster>(mainCam.gameObject);
             }
 
+            if (mainCam.GetComponent<Optimization.LowEndOptimizerRuntime>() == null)
+            {
+                Undo.AddComponent<Optimization.LowEndOptimizerRuntime>(mainCam.gameObject);
+            }
+
             // 3. Locate and Setup Station Visualizers inside factory
             SetupStationVisualizers();
             camCtrl.RebindToActualSceneObjects();
